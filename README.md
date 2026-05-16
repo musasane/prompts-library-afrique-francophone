@@ -6,7 +6,7 @@
 > Faso, Bénin, Togo, Guinée) et plus largement de la zone **UEMOA**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Markdown Lint](https://github.com/USERNAME/REPO/actions/workflows/markdown-lint.yml/badge.svg)](./.github/workflows/markdown-lint.yml)
+[![Markdown Lint](https://github.com/musasane/REPO/actions/workflows/markdown-lint.yml/badge.svg)](./.github/workflows/markdown-lint.yml)
 [![Language](https://img.shields.io/badge/lang-fran%C3%A7ais-blue.svg)](#)
 [![Region](https://img.shields.io/badge/region-UEMOA-green.svg)](#)
 
