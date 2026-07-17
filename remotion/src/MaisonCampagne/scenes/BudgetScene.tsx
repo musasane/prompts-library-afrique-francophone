@@ -6,7 +6,7 @@ import { INK } from "../theme";
 
 const BAR_START_DELAY = 25;
 const BAR_STAGGER = 12;
-const TRACK_WIDTH = 640;
+const TRACK_WIDTH = 860;
 
 export const BudgetScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -16,8 +16,8 @@ export const BudgetScene: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ alignItems: "center" }}>
-      <div style={{ textAlign: "center", marginTop: 56, opacity: headingOpacity }}>
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <div style={{ textAlign: "center", opacity: headingOpacity }}>
         <h2 style={{ fontSize: 30, color: INK.secondary, margin: 0 }}>
           Répartition du budget de construction
         </h2>

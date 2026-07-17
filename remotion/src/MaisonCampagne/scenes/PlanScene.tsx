@@ -5,6 +5,8 @@ import { VentilationArrows } from "../components/VentilationArrows";
 import {
   CANVAS_LEFT,
   CANVAS_TOP,
+  COMPOSITION_HEIGHT,
+  COMPOSITION_WIDTH,
   HOUSE_LEFT_PX,
   HOUSE_TOP_PX,
   ROOMS,
@@ -36,26 +38,31 @@ export const PlanScene: React.FC = () => {
     config: { damping: 200 },
   });
 
-  const parentsPxY =
-    HOUSE_TOP_PX + (parentsRoom.y + parentsRoom.h / 2) * SCALE_PX_PER_M;
-  const parentsPxRight =
-    HOUSE_LEFT_PX + parentsRoom.w * SCALE_PX_PER_M;
-  const calloutX = parentsPxRight + 40;
-  const calloutWidth = 420;
+  const calloutX = CANVAS_LEFT;
+  const calloutWidth = TERRAIN_PX_WIDTH;
+  const calloutY = CANVAS_TOP + TERRAIN_PX_HEIGHT + 36;
 
   return (
     <AbsoluteFill>
       <div
-        style={{ textAlign: "center", marginTop: 40, opacity: headingOpacity }}
+        style={{
+          textAlign: "center",
+          marginTop: 170,
+          opacity: headingOpacity,
+          padding: "0 48px",
+        }}
       >
-        <h2 style={{ fontSize: 34, color: INK.primary, margin: 0 }}>
-          Plan de la maison — ventilation traversante sur toutes les pièces
+        <h2 style={{ fontSize: 32, color: INK.primary, margin: 0 }}>
+          Plan de la maison
         </h2>
+        <p style={{ fontSize: 19, color: INK.secondary, margin: "8px 0 0" }}>
+          Ventilation traversante sur toutes les pièces
+        </p>
       </div>
 
       <svg
-        width={CANVAS_LEFT * 2 + TERRAIN_PX_WIDTH}
-        height={CANVAS_TOP + TERRAIN_PX_HEIGHT + 120}
+        width={COMPOSITION_WIDTH}
+        height={COMPOSITION_HEIGHT}
         style={{ position: "absolute", top: 0, left: 0 }}
       >
         {/* Terrain */}
@@ -129,41 +136,26 @@ export const PlanScene: React.FC = () => {
         );
       })}
 
-      {/* Callout — chambre parents */}
-      <svg
-        width={CANVAS_LEFT * 2 + TERRAIN_PX_WIDTH}
-        height={CANVAS_TOP + TERRAIN_PX_HEIGHT + 120}
-        style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}
-      >
-        <line
-          x1={parentsPxRight}
-          y1={parentsPxY}
-          x2={calloutX}
-          y2={parentsPxY}
-          stroke={parentsRoom.fill}
-          strokeWidth={2}
-          opacity={calloutProgress}
-        />
-      </svg>
+      {/* Callout — chambre parents, sous le plan */}
       <div
         style={{
           position: "absolute",
           left: calloutX,
-          top: parentsPxY - 58,
+          top: calloutY,
           width: calloutWidth,
           opacity: calloutProgress,
-          transform: `translateX(${(1 - calloutProgress) * 24}px)`,
+          transform: `translateY(${(1 - calloutProgress) * 20}px)`,
           background: SURFACE.card,
           border: `2px solid ${parentsRoom.fill}`,
           borderRadius: 12,
-          padding: "14px 18px",
+          padding: "16px 20px",
           boxShadow: "0 8px 24px rgba(11,11,11,0.08)",
         }}
       >
-        <div style={{ fontSize: 18, fontWeight: 700, color: INK.primary }}>
+        <div style={{ fontSize: 19, fontWeight: 700, color: INK.primary }}>
           ★ Chambre parents — la plus grande pièce
         </div>
-        <div style={{ fontSize: 15, color: INK.secondary, marginTop: 6 }}>
+        <div style={{ fontSize: 16, color: INK.secondary, marginTop: 6 }}>
           Fenêtres sur les deux façades (est/ouest) pour une ventilation
           naturelle traversante, jour et nuit.
         </div>

@@ -4,7 +4,7 @@ import { CATEGORICAL } from "./theme";
 export const TERRAIN_WIDTH_M = 15;
 export const TERRAIN_DEPTH_M = 20;
 export const TERRAIN_AREA_M2 = TERRAIN_WIDTH_M * TERRAIN_DEPTH_M;
-export const SCALE_PX_PER_M = 34;
+export const SCALE_PX_PER_M = 38;
 
 // Maison : plan "mono-travée" — chaque pièce occupe toute la largeur (7 m)
 // et possède donc un mur extérieur à l'ouest ET à l'est => ventilation
@@ -19,12 +19,12 @@ export const HOUSE_MARGIN_BOTTOM_M =
 // Repères de mise en page partagés entre TerrainScene et PlanScene, pour que
 // le rectangle du terrain reste visuellement au même endroit d'une scène à
 // l'autre.
-export const COMPOSITION_WIDTH = 1920;
-export const COMPOSITION_HEIGHT = 1080;
+export const COMPOSITION_WIDTH = 1080;
+export const COMPOSITION_HEIGHT = 1920;
 export const TERRAIN_PX_WIDTH = TERRAIN_WIDTH_M * SCALE_PX_PER_M;
 export const TERRAIN_PX_HEIGHT = TERRAIN_DEPTH_M * SCALE_PX_PER_M;
 export const CANVAS_LEFT = (COMPOSITION_WIDTH - TERRAIN_PX_WIDTH) / 2;
-export const CANVAS_TOP = 190;
+export const CANVAS_TOP = 480;
 export const HOUSE_LEFT_PX = CANVAS_LEFT + HOUSE_MARGIN_X_M * SCALE_PX_PER_M;
 export const HOUSE_TOP_PX = CANVAS_TOP + HOUSE_MARGIN_TOP_M * SCALE_PX_PER_M;
 

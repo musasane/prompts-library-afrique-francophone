@@ -22,14 +22,16 @@ export const SceneTitle: React.FC<Props> = ({ title, subtitle, delay = 0 }) => {
         opacity: progress,
         transform: `translateY(${(1 - progress) * 24}px)`,
         textAlign: "center",
+        padding: "0 64px",
       }}
     >
       <h1
         style={{
-          fontSize: 56,
+          fontSize: 46,
           fontWeight: 700,
           color: INK.primary,
           margin: 0,
+          lineHeight: 1.15,
           letterSpacing: -0.5,
         }}
       >
@@ -38,9 +40,10 @@ export const SceneTitle: React.FC<Props> = ({ title, subtitle, delay = 0 }) => {
       {subtitle ? (
         <p
           style={{
-            fontSize: 28,
+            fontSize: 23,
             color: INK.secondary,
-            margin: "12px 0 0",
+            margin: "16px 0 0",
+            lineHeight: 1.4,
           }}
         >
           {subtitle}

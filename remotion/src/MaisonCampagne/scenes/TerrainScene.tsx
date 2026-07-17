@@ -4,6 +4,8 @@ import { Counter } from "../components/Counter";
 import {
   CANVAS_LEFT,
   CANVAS_TOP,
+  COMPOSITION_HEIGHT,
+  COMPOSITION_WIDTH,
   TERRAIN_AREA_M2,
   TERRAIN_DEPTH_M,
   TERRAIN_PX_HEIGHT,
@@ -32,18 +34,19 @@ export const TerrainScene: React.FC = () => {
       <div
         style={{
           textAlign: "center",
-          marginTop: 64,
+          marginTop: 170,
           opacity: headingOpacity,
+          padding: "0 48px",
         }}
       >
-        <h2 style={{ fontSize: 38, color: INK.primary, margin: 0 }}>
+        <h2 style={{ fontSize: 34, color: INK.primary, margin: 0 }}>
           Un terrain de 15 × 20 mètres
         </h2>
       </div>
 
       <svg
-        width={CANVAS_LEFT * 2 + TERRAIN_PX_WIDTH}
-        height={CANVAS_TOP + TERRAIN_PX_HEIGHT + 120}
+        width={COMPOSITION_WIDTH}
+        height={COMPOSITION_HEIGHT}
         style={{ position: "absolute", top: 0, left: 0 }}
       >
         <AnimatedRect
