@@ -39,8 +39,9 @@ Chaque prompt intègre :
 ├── .github/
 │   └── workflows/
 │       └── markdown-lint.yml                           # CI : validation Markdown
-└── prompts/
-    └── prompt-monetisation-en-ligne-afrique-francophone.md
+├── prompts/
+│   └── prompt-monetisation-en-ligne-afrique-francophone.md
+└── remotion/                                           # Vidéos promo (projet Remotion)
 ```
 
 ---
